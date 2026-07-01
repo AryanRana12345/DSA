@@ -6,7 +6,7 @@ vector<vector<int>> Three_Sum(int n, vector<int> arr){
     sort(arr.begin(),arr.end());
     vector<vector<int>> temp;
     for(int i=0;i<n;i++){
-        if (i > 0 && arr[i-1] == arr[i]){
+        if(i > 0 && arr[i-1] == arr[i]){
             continue;
         }
         int j = i+1;
