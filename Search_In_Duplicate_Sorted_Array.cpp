@@ -6,7 +6,7 @@ bool Search_In_Duplicate_Sorted_Array(int low,int high, vector<int>& arr,int Tar
     // 3 3 2 3 3 3 3 3 3
     // 4 5 2 3 3 3 3 3 3
     // 4 4 4 4 4 4 2 3 4
-    // 3 3 4 3 3 3 3 3 3
+    // 4 3 3 3 3
     while(low<=high){
         int mid = (low+high)/2;
         if(arr[mid] == Target){
@@ -16,43 +16,22 @@ bool Search_In_Duplicate_Sorted_Array(int low,int high, vector<int>& arr,int Tar
             low += 1;
             high -= 1;
         }
-        else if(arr[low] != arr[mid]){
-            if(arr[high] >= arr[mid]){
-                if(arr[mid] < Target && Target <= arr[high]){
-                    low = mid+1;
-                }
-                else{
-                    high = mid-1;
-                }
+        else if(arr[mid] >= arr[low]){
+            if(arr[mid] > Target && Target >= arr[low]){
+                high = mid-1;
             }
             else{
-                if(arr[mid] > Target && Target >= arr[low]){
-                    high = mid-1;
-                }
-                else{
-                    low = mid+1;
-                }
+                low = mid+1;
             }
         }
         else{
-            if(arr[mid] >= arr[low]){
-                if(arr[mid] > Target && Target >= arr[low]){
-                    high = mid-1;
-                }
-                else{
-                    low = mid+1;
-                }
+            if(arr[mid] < Target && Target <= arr[high]){
+                low = mid+1;
             }
             else{
-                if(arr[mid] < Target && Target <= arr[high]){
-                    low = mid+1;
-                }
-                else{
-                    high = mid-1;
-                }
+                high = mid-1;
             }
         }
-
     }
     return false;
 }
