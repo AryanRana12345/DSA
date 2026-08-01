@@ -13,7 +13,7 @@ int Koko_Eating_Bananas(int h,vector<int>& arr){
         int mid = low + (high-low)/2;
         int hour = 0;
         for(int i=0;i<arr.size();i++){
-            hour = hour + ceil(arr[i]/mid);
+            hour = hour + (arr[i] + mid - 1)/mid;
         }
         if(hour <= h){
             ans = mid;
