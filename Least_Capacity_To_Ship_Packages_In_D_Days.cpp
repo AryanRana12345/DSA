@@ -8,7 +8,7 @@ int Calculation(vector<int>& arr,int t,int mid){
     int point = 0;
     while(point < arr.size()){
         int temp = mid;
-        while(temp>=arr[point]){
+        while(temp>=arr[point] && point < arr.size()){
             temp = temp - arr[point];
             point++;
         }
