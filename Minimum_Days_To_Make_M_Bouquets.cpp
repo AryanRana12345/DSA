@@ -14,6 +14,7 @@ int bouquet(vector<int>& arr,int n,int mid){
             count = 0;
         }
     }
+    bouquet_counter = bouquet_counter + count/n;
     return bouquet_counter;
 }
 // {7, 7, 7, 7, 13, 11, 12, 7}, m = 2, n = 3, mid = 10
