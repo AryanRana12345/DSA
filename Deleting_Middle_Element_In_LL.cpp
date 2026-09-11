@@ -23,6 +23,7 @@ ListNode* Array_To_Vector(vector<int> arr){
 // 1 2 3 4
 // s
 // f
+// You could have prevented a whole lot of mess if you did it this way so the entire problem is that how to be just a little back correct so you could have started by giving fast an additional jump so you could have just slow = head and fast = head->next->next; leading to change in certain conditions like fast!= null and fats->next!=null but overall that would have caused less coding.
 ListNode* Deleting_Middle_Element_In_LL(ListNode* head){
     if(head == nullptr || head->next == nullptr) return nullptr;
     ListNode* slow = head;
