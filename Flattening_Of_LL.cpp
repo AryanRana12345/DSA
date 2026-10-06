@@ -12,11 +12,12 @@ class ListNode{
         }
 };
 ListNode* Flattening_Of_LL(ListNode* head){
+    if(head == nullptr || head->next == nullptr) return head;
     ListNode* temp = head;
     ListNode* temp2 = temp->next;
     ListNode* psuedo = new ListNode(-1);
-    ListNode* recent = psuedo;
     while(temp2 != nullptr){
+        ListNode* recent = psuedo;
         ListNode* temp3 = temp2->next;
         temp->next = nullptr;
         temp2->next = nullptr;
@@ -36,7 +37,6 @@ ListNode* Flattening_Of_LL(ListNode* head){
         else recent->child = temp2;
         temp = psuedo->child;
         temp2 = temp3;
-        recent = psuedo;
     }
     return psuedo->child;
 }
