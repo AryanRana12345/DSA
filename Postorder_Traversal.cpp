@@ -23,7 +23,7 @@ void Delete_Tree(Node* node){
     if(node == nullptr) return;
     Delete_Tree(node->left);
     Delete_Tree(node->right);
-    print(node);
+    delete node;
 }
 int main(){
     Node* root = new Node(1);
@@ -31,4 +31,5 @@ int main(){
     root->left->left = new Node(4);
     root->left->right = new Node(2);
     Postorder_Traversal(root);
+    Delete_Tree(root);
 }
